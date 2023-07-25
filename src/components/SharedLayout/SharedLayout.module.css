@@ -1,0 +1,43 @@
+/* SharedLayout.module.css */
+
+/* Загальний контейнер */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовок і навігація */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav_link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header__nav_link:hover {
+  background-color: #555;
+}
+
+/* Загальний стиль для сторінки */
+.main {
+  padding: 20px;
+}
+
+/* Стилі для роутів у навігації, коли вони активні */
+/* Наприклад, коли поточний шлях співпадає з атрибутом "to" */
+.active {
+  background-color: #555;
+}

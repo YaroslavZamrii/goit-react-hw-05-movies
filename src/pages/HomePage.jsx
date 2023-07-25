@@ -3,17 +3,6 @@ import { getTrendingMovies } from 'services/api';
 import { useEffect, useState } from 'react';
 import MoviesList from 'components/MoviesList/MoviesList';
 
-const toastConfig = {
-  position: 'top-right',
-  autoClose: 3000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  progress: undefined,
-  theme: 'colored',
-};
-
 const HomePage = () => {
   const [trendMovies, setTrendMovies] = useState([]);
 
@@ -32,7 +21,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h1>Trending Today :</h1>
+      <h1>Trending Today</h1>
       <MoviesList filmsList={trendMovies} />
     </>
   );

@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  margin: 20px;
+}
+
+.poster {
+  flex: 0 0 40%;
+  margin-right: 20px;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+}
+
+.information {
+  flex: 1;
+}
+
+.information h1 {
+  font-size: 24px;
+}
+
+.information p {
+  margin: 5px 0;
+}
+
+.information h2 {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.information ul {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.information li {
+  margin-bottom: 5px;
+}
+
+.cast-reviews-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.additional-info {
+  display: flex;
+  margin-top: 15px;
+}
+
+.additional {
+  margin-top: 30px;
+}
+
+.additional p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.additional ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.additional li {
+  margin-right: 10px;
+}
+
+.section {
+  padding-top: 12px;
+}

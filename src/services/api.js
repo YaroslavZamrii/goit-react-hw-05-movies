@@ -9,3 +9,31 @@ export const getTrendingMovies = async () => {
   );
   return response.data;
 };
+
+export const getFilmSearch = async query => {
+  const response = await axios.get(
+    `${URL}/search/movie?query=${query}&include_adult=false&language=en-US&api_key=${API_KEY}&page=1`
+  );
+  return response.data;
+};
+
+export const getFilmId = async id => {
+  const response = await axios.get(
+    `${URL}/movie/${id}?language=en-US&api_key=${API_KEY}`
+  );
+  return response.data;
+};
+
+export const getFilmsCast = async id => {
+  const response = await axios.get(
+    `${URL}/movie/${id}/credits?language=en-US&api_key=${API_KEY}`
+  );
+  return response.data;
+};
+
+export const getFilmReviews = async id => {
+  const response = await axios.get(
+    `${URL}/movie/${id}/reviews?language=en-US&api_key=${API_KEY}`
+  );
+  return response.data;
+};
