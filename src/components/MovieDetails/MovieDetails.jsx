@@ -7,7 +7,6 @@ import css from './MovieDetals.module.css';
 const MovieDetails = ({ filmsIdDetails }) => {
   const location = useLocation();
   const backLink = useRef(location.state?.from ?? '/');
-  console.log('backLink:', backLink);
 
   const {
     original_title,
