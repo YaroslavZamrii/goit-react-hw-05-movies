@@ -5,6 +5,7 @@ import css from './MoviesList.module.css';
 
 const MoviesList = ({ filmsList }) => {
   const location = useLocation();
+  console.log('location:', location);
   return (
     <ul className={css['movies-list']}>
       {filmsList.map(({ id, title, poster_path }) => {
