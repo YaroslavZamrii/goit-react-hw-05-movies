@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import css from './SearchForm.module.css';
 
 const SearchForm = ({ setSearchParams }) => {
@@ -20,6 +21,10 @@ const SearchForm = ({ setSearchParams }) => {
       </button>
     </form>
   );
+};
+
+SearchForm.propTypes = {
+  setSearchParams: PropTypes.func.isRequired,
 };
 
 export default SearchForm;

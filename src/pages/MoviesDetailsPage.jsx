@@ -18,7 +18,7 @@ const toastConfig = {
 
 const MoviesDetailsPage = () => {
   const { filmId } = useParams();
-  const [filmsIdDetails, setFilmsIdDetails] = useState([]);
+  const [filmsIdDetails, setFilmsIdDetails] = useState({});
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 

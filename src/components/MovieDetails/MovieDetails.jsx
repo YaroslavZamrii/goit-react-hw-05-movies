@@ -1,5 +1,6 @@
 import Loader from 'components/Loader/Loader';
 import React, { Suspense, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import css from './MovieDetals.module.css';
 
@@ -66,6 +67,10 @@ const MovieDetails = ({ filmsIdDetails }) => {
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  filmsIdDetails: PropTypes.object.isRequired,
 };
 
 export default MovieDetails;
