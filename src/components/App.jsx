@@ -1,24 +1,28 @@
-import HomePage from 'pages/HomePage';
-import MoviesPage from 'pages/MoviesPage';
 import { Route, Routes } from 'react-router-dom';
-
+import { Suspense, lazy } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-import MoviesDetailsPage from 'pages/MoviesDetailsPage';
-import Cast from './Cast/Cast';
-import Reviews from './Reviews/Reviews';
-import SharedLayout from './SharedLayout/SharedLayout';
+
+const SharedLayout = lazy(() => import('./SharedLayout/SharedLayout'));
+const HomePage = lazy(() => import('pages/HomePage'));
+const MoviesPage = lazy(() => import('pages/MoviesPage'));
+const MoviesDetailsPage = lazy(() => import('pages/MoviesDetailsPage'));
+const Cast = lazy(() => import('./Cast/Cast'));
+const Reviews = lazy(() => import('./Reviews/Reviews'));
+const Loader = lazy(() => import('./Loader/Loader'));
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="movies" element={<MoviesPage />} />
-        <Route path="movies/:filmId" element={<MoviesDetailsPage />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="movies" element={<MoviesPage />} />
+          <Route path="movies/:filmId" element={<MoviesDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 };

@@ -1,19 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { getFilmsCast } from 'services/api';
+
+const toastConfig = {
+  position: 'top-right',
+  autoClose: 2000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'colored',
+};
 
 const Cast = () => {
   const { filmId } = useParams();
   const [cast, setCast] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!filmId) return;
     const fetchFilmCast = async () => {
-      const cast = await getFilmsCast(filmId);
-      setCast(cast.cast);
+      try {
+        const cast = await getFilmsCast(filmId);
+        setCast(cast.cast);
+      } catch (error) {
+        setError(error.message);
+      }
     };
     fetchFilmCast();
   }, [filmId]);
+
+  useEffect(() => {
+    toast.error(error, toastConfig);
+  }, [error]);
 
   return (
     <div>
